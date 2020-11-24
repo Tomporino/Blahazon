@@ -9,12 +9,8 @@
     "@testing-library/user-event": "^12.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-<<<<<<< HEAD
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
-=======
-    "react-scripts": "^4.0.1",
->>>>>>> d289073b9eeafb803c5d60f49cf431edf0ad18f1
     "web-vitals": "^0.2.4"
   },
   "scripts": {
