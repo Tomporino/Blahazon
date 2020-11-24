@@ -3,9 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles'
 
 
-const Dummy = makeStyles
-`
-
 function Card() {
     return (
         <Grid
@@ -14,12 +11,12 @@ function Card() {
             justify="center"
             alignItems="center"
             fixed="true">
-            <Dummy>
+            <p>
                 Valami
-            </Dummy>
-            <Dummy>
+            </p>
+            <p>
                 Kaka
-            </Dummy>
+            </p>
         </Grid> 
     );
 }
