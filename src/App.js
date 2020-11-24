@@ -16,6 +16,7 @@ function App() {
         fixed="true"
         >
           <Card></Card>
+          <Card></Card>
         </Grid>
     </div>
     </div>

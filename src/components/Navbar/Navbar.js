@@ -1,6 +1,5 @@
 import React from 'react';
 import Appbar from '@material-ui/core/Appbar';
-import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles'
 
 
@@ -14,7 +13,7 @@ function Navbar() {
     const classes = useStyles();
     return (
     <Appbar position="static">
-        <Typography className={classes.title} variant="h6">Blahazon</Typography>
+        <h1 className={classes.title}>Blahazon</h1>
     </Appbar>
     );
 }

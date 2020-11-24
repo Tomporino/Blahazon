@@ -1,16 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
+import Grid from '@material-ui/core/Grid';
+import {makeStyles} from '@material-ui/core/styles'
 
 
-const Dummy = styled.div`
-    background: red;
+const Dummy = makeStyles
 `
 
 function Card() {
     return (
-        <Dummy>
-            Valami
-        </Dummy> 
+        <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            fixed="true">
+            <Dummy>
+                Valami
+            </Dummy>
+            <Dummy>
+                Kaka
+            </Dummy>
+        </Grid> 
     );
 }
 
