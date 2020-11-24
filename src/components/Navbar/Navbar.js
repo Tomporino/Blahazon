@@ -14,9 +14,7 @@ function Navbar() {
     const classes = useStyles();
     return (
     <Appbar position="static">
-        <div >
         <Typography className={classes.title} variant="h6">Blahazon</Typography>
-        </div>
     </Appbar>
     );
 }
