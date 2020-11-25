@@ -7,13 +7,13 @@ import testImage from '../../resources/Tshirts/whiteTshirt.png'
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        background: "blue"
+        background: "lightgrey"
     },
-    lorem: {
-        padding: '50px'
-    },
-    image: {
-        padding: '10px'
+    root: {
+        paddingLeft: '60px',
+        paddingRight: '60px',
+        paddingTop: '50px',
+        paddinBottom: '50px'
     }
 }));
 
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 function Card() {
     const classes = useStyles();
     return (
-        <div className={classes.lorem}>
+        <div className={classes.root}>
         
         <Grid container className={classes.container}
             justify="space-evely"
