@@ -6,19 +6,14 @@ import './App.css';
 
 function App() {
   return (
-    <div><Navbar/>
-    <div >
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        fixed="true"
-        >
+    <div>
+      <Navbar/>
+      <div>
+        <Grid>
           <Card></Card>
           <Card></Card>
         </Grid>
-    </div>
+      </div>
     </div>
   );
 }
