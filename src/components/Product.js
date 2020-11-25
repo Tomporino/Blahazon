@@ -1,12 +1,13 @@
 import React from 'react';
-import image from '../resources/Tshirts/retard.png';
+import productImage from '../resources/Tshirts/retard.png';
+import Button from '../resources/buttons/button.png';
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     productImage:{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${productImage})`,
         backgroundSize: '100% 100%',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
     },
 
     productDetails:{
@@ -17,9 +18,9 @@ const useStyles = makeStyles({
     container:{
         padding: '50px 20vw',
         display: 'grid',
-        height: '45vw',
-        gridTemplateColumns: '30vw auto',
-        gap: '10px'
+        gridTemplateColumns: '20vw auto',
+        gridTemplateRows: '30vw auto',
+        gap: '10px',
     },
 
     dropbtn:{
@@ -31,13 +32,22 @@ const useStyles = makeStyles({
         position: 'absolute',
         backgroundColor: '#f9f9f9',
         minWidth: '160px',
-        boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
-        zIndex: '1',
     },
 
     displayNone:{
         display: 'none',
     },
+
+    buttonImage:{
+        backgroundImage: `url(${Button})`,
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat',
+        border: 'none',
+        padding: '15px',
+        color: 'yellow',
+        fontWeight: '700',
+        margin: '10px 10px 10px 0'
+    }
 
 })
 
@@ -49,22 +59,44 @@ export const Product = ({match}) => {
                 <div className={classes.productImage}>
                 </div>
                 <div className={classes.productDetails}>
-                    <p>Emporio Armani Loungewear 2 pack logo lounge t-shirts in black</p>
+                    <p>Emporio Armani Loungewear logo lounge t-shirt in black</p>
                     <h2>49.99 EUR</h2>
                     <h3>colour:</h3>
                     <p>white</p>
                     <h3>size: </h3>
                     <p id='selectdedSize'>XL</p>
+                    <button className={classes.buttonImage}>Costumize</button>
                     <div className={classes.dropdown}>
-                        <button className={classes.dropbtn} onClick={ChooseSizeButtonClickHandler}>Choose size</button>
+                        <button className={`${classes.dropbtn} ${classes.buttonImage}`} onClick={ChooseSizeButtonClickHandler}>Choose size</button>
                         <div className={`${classes.dropdownContent} ${classes.displayNone}`}>
-                            <button onClick={(event) => SelectButtonClickHandler(event)}>XS</button>
-                            <button onClick={(event) => SelectButtonClickHandler(event)}>S</button>
-                            <button onClick={(event) => SelectButtonClickHandler(event)}>M</button>
-                            <button onClick={(event) => SelectButtonClickHandler(event)}>L</button>
-                            <button onClick={(event) => SelectButtonClickHandler(event)}>XL</button>
+                            <button className={classes.buttonImage} onClick={(event) => SelectButtonClickHandler(event)}>XS</button>
+                            <button className={classes.buttonImage} onClick={(event) => SelectButtonClickHandler(event)}>S</button>
+                            <button className={classes.buttonImage} onClick={(event) => SelectButtonClickHandler(event)}>M</button>
+                            <button className={classes.buttonImage} onClick={(event) => SelectButtonClickHandler(event)}>L</button>
+                            <button className={classes.buttonImage} onClick={(event) => SelectButtonClickHandler(event)}>XL</button>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <h3>PRODUCT DETAILS</h3>
+                    <p>Extreme muscle fit T-shirt pack by Emporio Armani</p>
+                    <ul>
+                        <li>Super stretch cotton jersey</li>
+                        <li>Crew neck</li>
+                        <li>Skinny-cut sleeves</li>
+                        <li>Emporio Armani logo</li>
+                        <li>Tightest fit to the body</li>
+                        <li>Spray-on look</li>
+                        <li>Super skinny fit – cut closest to the body</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>BRAND</h3>
+                    <p>A diffusion line from iconic fashion house Armani, 
+                        Emporio Armani offers timeless style with their 
+                        collections of wearable classics. Emporio Armani 
+                        pieces range from loungewear and underwear to watches, 
+                        all of which channel the effortless style Emporio Armani is famed for.</p>
                 </div>
             </div>
         </div>
