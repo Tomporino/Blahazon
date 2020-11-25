@@ -18,33 +18,60 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function Card() {
-    const classes = useStyles();
-    return (
-        <div className={classes.root}>
-        
-        <Grid container className={classes.container}
-            justify="space-evely"
-            alignItems="center"
-            spacing={3}>
-
+function Card(props) {
+    let card;
+    if (!props.reverse) {
+        card = 
+        <>
             <Grid item container xs={6} 
-                justify="center" 
-                spacing={3}>
-
-                <Grid item xs={6}>
-                    <Typography variant="p">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                    </Typography>
+                    justify="center" 
+                    spacing={3}>
+                        <Grid item xs={6}>
+                            <Typography variant="p">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                            </Typography>
+                        </Grid>
                 </Grid>
 
-            </Grid>
+                <Grid item xs={6}>
+                    <Image
+                        src={testImage}
+                        aspectRatio={(4/3)}
+                        />
+                </Grid>
+        </>
+
+    } else {
+        card = 
+        <>
             <Grid item xs={6}>
                 <Image
                     src={testImage}
                     aspectRatio={(4/3)}
                     />
             </Grid>
+        <Grid item container xs={6} 
+                justify="center" 
+                spacing={3}>
+                    <Grid item xs={6}>
+                        <Typography variant="p">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                        </Typography>
+                    </Grid>
+            </Grid>
+        </>
+    }
+
+    const classes = useStyles();
+    return (
+        <div className={classes.root}>
+        <Grid container className={classes.container}
+            justify="space-evely"
+            alignItems="center"
+            spacing={3}>
+            
+            {card}
+            
         </Grid> 
         </div>
     );

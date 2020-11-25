@@ -11,7 +11,7 @@ function App() {
       <div>
         <Grid>
           <Card></Card>
-          <Card></Card>
+          <Card reverse={true}></Card>
         </Grid>
       </div>
     </div>
