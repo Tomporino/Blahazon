@@ -9,20 +9,15 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 function App() {
   return (
     <Router>
-      <div><Navbar/>
-      {/* <div >
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-          fixed="true"
-          >
+      <div>
+        <Navbar/>
+        <div>
+          <Grid>
             <Card></Card>
-            <Card></Card>
+            <Card reverse={true}></Card>
           </Grid>
-      </div> */}
-      <Route path="/product/:id" component={Product} />
+        </div>
+        <Route path="/product/:id" component={Product} />
       </div>
     </Router>
   );
