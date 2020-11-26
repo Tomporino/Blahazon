@@ -32,8 +32,14 @@ function Customize(){
 
     useEffect(() => {
         let header = document.querySelector(".tui-image-editor-header");
-        header.innerHTML = `<button onClick={saveImageToDisk}>Download to Disk</button>`;
-        header.className = "buttonDiv"
+        header.className = "buttonDiv";
+        let button = document.createElement('button');
+        button.onclick = saveImageToDisk;
+        button.innerHTML = "Save";
+        while (header.firstChild) {
+            header.removeChild(header.lastChild);
+        }
+        header.appendChild(button);
     });
 
     return (

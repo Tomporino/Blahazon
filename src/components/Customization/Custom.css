@@ -3,11 +3,11 @@ body {
 }
 
 .buttonDiv {
-    padding: 10px;
     text-align: right;
 }
 
 .buttonDiv button{
+    margin: 20px;
     padding: 10px;
     background: red;
     color: yellow;

@@ -1,7 +1,5 @@
 import React from 'react';
-import Appbar from '@material-ui/core/Appbar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
+import {useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {makeStyles} from '@material-ui/core/styles';
 import navImage from '../../resources/buttons/navbar.png';
@@ -25,8 +23,18 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'rgba(200, 0, 0, 0)',
         boxShadow: 'none',
         color: 'yellow',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: 50,
+        //transition: '1s ease 0.5s',
+        transition: 'opacity 1s'
         
+    },
+
+    scrolled: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        opacity: 0.75
     },
 
     buttonStyle: {
@@ -34,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
         height: '50px',
         backgroundSize: '100% 100%',
         float: 'right',
-        marginRight: '20px',
-        marginLeft: '10px',
+        marginRight: '40px',
+        marginLeft: '10px'
         
 
     },
@@ -66,23 +74,30 @@ const useStyles = makeStyles((theme) => ({
 
 function Navbar() {
     const classes = useStyles();
+
+    const[scrolled,setScrolled]=React.useState(false);
+
+    const handleScroll=()=>{
+        const offset=window.scrollY;
+        if(offset > 100){
+            setScrolled(true);
+        }else{
+            setScrolled(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+
+
+
     return (
-        <div className={classes.Navbar}>
+        <div className={scrolled ? `${classes.Navbar} ${classes.scrolled}` : `${classes.Navbar}`}>
             <div className={classes.title}><h1>Blahazone</h1></div>
             <Link to="/" ><div className={`${classes.homeBtn} ${classes.buttonStyle}`}></div></Link>
             <Link to="/products" ><div className={`${classes.productsBtn} ${classes.buttonStyle}`}></div></Link>
-
-
         </div>
-    // <Appbar position="static" className={classes.Navbar}>
-    //     <Toolbar>
-    //         <h1 className={classes.title}>Blahazon</h1>
-
-        
-    //     <Button className="productsBtn"></Button>
-    //     </Toolbar>
-    //     <Button className="homeBtn"></Button>
-    // </Appbar>
     );
 }
 
