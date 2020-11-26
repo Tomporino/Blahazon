@@ -8,8 +8,6 @@ import './App.css'
 import Customize from './components/Customization/Customize';
 
 
-
-
 function App() {
   return (
     <Router>

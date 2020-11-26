@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ImageEditor from "@toast-ui/react-image-editor";
 import "tui-image-editor/dist/tui-image-editor.css";
 import "./Custom.css"
+import testImage from '../../resources/Tshirts/basicWhite.png'
+import { Button } from '@material-ui/core';
 
 const myTheme = {
     "menu.backgroundColor": "white",
@@ -16,6 +18,7 @@ const download = require("downloadjs");
 function Customize(){
     const [imageSrc, setImageSrc] = useState("");
     const imageEditor = React.createRef();
+    
 
     const saveImageToDisk = () => {
         const imageEditorInst = imageEditor.current.imageEditorInst;
@@ -26,11 +29,19 @@ function Customize(){
         download(data, `image.${extension}`, mimeType);
         }
     };
+
+    useEffect(() => {
+        let header = document.querySelector(".tui-image-editor-header");
+        header.innerHTML = `<button onClick={saveImageToDisk}>Download to Disk</button>`;
+        header.className = "buttonDiv"
+    });
+
     return (
+        <>
         <ImageEditor
         includeUI={{
         loadImage: {
-            path: imageSrc,
+            path: testImage,
             name: "image",
         },
         theme: myTheme,
@@ -52,7 +63,8 @@ function Customize(){
         }}
         usageStatistics={true}
         ref={imageEditor}
-    />
+        />
+        </>
     )
 }
 

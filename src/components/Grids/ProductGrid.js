@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import ProductCard from '../Cards/ProductCard';
-import testImage from '../../resources/Tshirts/blahamodel.png';
+import testImage from '../../resources/Tshirts/basicWhite.png';
 
 
 const products = [
@@ -16,7 +16,7 @@ const products = [
     {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
     {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
     {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"}
-  ]
+]
 
 function ProductGrid(props) {
     console.log(props);
@@ -33,7 +33,7 @@ function ProductGrid(props) {
                     (product)=> 
                     <Grid xs={4} item>
                             <ProductCard imageSource={product.imgsrc} name={product.name}
-                             description={product.description} id={product.id}/>
+                            description={product.description} id={product.id}/>
                     </Grid>
                 )
             }
