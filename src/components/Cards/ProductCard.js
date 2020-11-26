@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import {Link} from 'react-router-dom';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -55,10 +56,11 @@ function ProductCard(props) {
     return (
         <Card className={classes.root}>
         <CardActionArea>
+            <Link to={`/product/${props.id}`}>
             <CardMedia
             className={classes.media}
             image={props.imageSource}/>
-            
+            </Link>
             <CardContent className={classes.content}>
                 <h3>{props.name}</h3>
                 <p>{props.description}</p>

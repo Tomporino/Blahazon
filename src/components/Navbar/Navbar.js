@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         height: '50px',
         backgroundSize: '100% 100%',
         float: 'right',
-        marginRight: '20px',
+        marginRight: '40px',
         marginLeft: '10px',
         
 
