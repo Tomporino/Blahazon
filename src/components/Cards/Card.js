@@ -29,14 +29,14 @@ function Card(props) {
                     spacing={3}>
                         <Grid item xs={6}>
                             <Typography variant="p">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                            Blahazon is your one-stop online shop for today's most daring, exciting and edgy fashion apparel. Our affordable collections are all about redefining trends, design excellence and exceptional quality to satisfy the needs of every aspiring fashionista. Furthermore you can make your own design on any product!
                             </Typography>
                         </Grid>
                 </Grid>
 
                 <Grid item xs={6}>
                     <Image
-                        src={imageOne}
+                        src={imageTwo}
                         aspectRatio={(4/3)}
                         />
                 </Grid>
@@ -47,7 +47,7 @@ function Card(props) {
         <>
             <Grid item xs={6}>
                 <Image
-                    src={imageTwo}
+                    src={imageOne}
                     aspectRatio={(4/3)}
                     />
             </Grid>
@@ -56,7 +56,7 @@ function Card(props) {
                 spacing={3}>
                     <Grid item xs={6}>
                         <Typography variant="p">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                        For BlahaEntertainment, being a brand that symbolises fashion and luxury means knowing how to create unique products, combining aesthetics, quality and innovation with a strong system of values. Not only is the Group known for the inimitable hallmark style of its products, but also for the principles guiding its actions, which are laid down in its Code of Ethics. These principles are inspired by the concept of substance and the conviction that sustainability means, first and foremost, creating a system capable of enduring through time, with respect for all the resources that the Group draws on and with the awareness that the future of generations to come depends on the choices of today.
                         </Typography>
                     </Grid>
             </Grid>
