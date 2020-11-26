@@ -69,7 +69,7 @@ export const Product = ({match}) => {
                     <p>white</p>
                     <h3>size: </h3>
                     <p id='selectdedSize'>XL</p>
-                    <Link to="/customize">
+                    <Link to={`/customize/${match.params.id}`} >
                         <button className={classes.buttonImage}>Customize</button>
                     </Link>
                     <div className={classes.dropdown}>

@@ -4,6 +4,7 @@ import "tui-image-editor/dist/tui-image-editor.css";
 import "./Custom.css"
 import testImage from '../../resources/Tshirts/basicWhite.png'
 import { Button } from '@material-ui/core';
+import {products} from '../TempImages';
 
 const myTheme = {
     "menu.backgroundColor": "white",
@@ -15,11 +16,13 @@ const myTheme = {
 
 const download = require("downloadjs");
 
-function Customize(){
+function Customize({match}){
+
+    const product =  products.find(item => item.id === match.params.id).imgsrc;
+
     const [imageSrc, setImageSrc] = useState("");
     const imageEditor = React.createRef();
     
-
     const saveImageToDisk = () => {
         const imageEditorInst = imageEditor.current.imageEditorInst;
         const data = imageEditorInst.toDataURL();
@@ -47,7 +50,7 @@ function Customize(){
         <ImageEditor
         includeUI={{
         loadImage: {
-            path: testImage,
+            path: product,
             name: "image",
         },
         theme: myTheme,
