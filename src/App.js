@@ -3,23 +3,10 @@ import Navbar from './components/Navbar/Navbar';
 import {Product} from './components/Product';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {ProductList} from './components/ProductList';
-//import ProductGrid from './components/Grids/ProductGrid';
-//import testImage from './resources/Tshirts/blahamodel.png'
+import ProductGrid from './components/Grids/ProductGrid';
 import './App.css'
 
-// const products = [
-//   {id:"1", imgsrc:`${testImage}`, name:"testkep", description:"leiras"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2 ez egy szöveg ami valahogy kinéz", description:"leiras2 es ez is kinez valahogy lol de jo lesz"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"},
-//   {id:"2", imgsrc:"kep.jpg", name:"testkep2", description:"leiras2"}
-// ]
+
 
 
 function App() {
@@ -29,6 +16,7 @@ function App() {
         <Navbar/>
         <Switch>
           <Route path="/" exact component={ProductList} />
+          <Route path="/products" exact component={ProductGrid} />
           <Route path="/product/:id" component={Product} />
         </Switch>
       </div>
