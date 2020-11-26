@@ -1,11 +1,13 @@
 import React from 'react';
-import productImage from '../resources/Tshirts/retard.png';
+// import productImage from '../resources/Tshirts/retard.png';
 import Button from '../resources/buttons/button.png';
 import {makeStyles} from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
+import {products} from '../components/TempImages';
 
 const useStyles = makeStyles({
     productImage:{
-        backgroundImage: `url(${productImage})`,
+        // backgroundImage: `url(${productImage})`,
         backgroundSize: '100% 100%',
         backgroundRepeat: 'no-repeat',
     },
@@ -25,12 +27,12 @@ const useStyles = makeStyles({
 
     dropbtn:{
         position: 'relative',
-        display: 'inline-block'
+        display: 'inline-block',
+        backgroundColor: 'rgba(255, 0, 0, 0)'
     },
 
     dropdownContent:{
         position: 'absolute',
-        backgroundColor: '#f9f9f9',
         minWidth: '160px',
     },
 
@@ -46,17 +48,19 @@ const useStyles = makeStyles({
         padding: '15px',
         color: 'yellow',
         fontWeight: '700',
-        margin: '10px 10px 10px 0'
+        margin: '10px 10px 10px 0',
+        backgroundColor: 'rgba(255, 0, 0, 0)'
     }
 
 })
 
 export const Product = ({match}) => {
     const classes = useStyles();
+    getImage();
     return (
         <div>
             <div className={classes.container}>
-                <div className={classes.productImage}>
+                <div className={classes.productImage} style={{backgroundImage: `url(${getImage()})`}}>
                 </div>
                 <div className={classes.productDetails}>
                     <p>Emporio Armani Loungewear logo lounge t-shirt in black</p>
@@ -65,7 +69,9 @@ export const Product = ({match}) => {
                     <p>white</p>
                     <h3>size: </h3>
                     <p id='selectdedSize'>XL</p>
-                    <button className={classes.buttonImage}>Costumize</button>
+                    <Link to="/customize">
+                        <button className={classes.buttonImage}>Customize</button>
+                    </Link>
                     <div className={classes.dropdown}>
                         <button className={`${classes.dropbtn} ${classes.buttonImage}`} onClick={ChooseSizeButtonClickHandler}>Choose size</button>
                         <div className={`${classes.dropdownContent} ${classes.displayNone}`}>
@@ -109,6 +115,12 @@ export const Product = ({match}) => {
     function SelectButtonClickHandler(event) {
         document.querySelector("#selectdedSize").innerText = event.target.innerText;
         document.querySelector(`.${classes.dropdownContent}`).classList.add(`${classes.displayNone}`);
+    }
+
+    function getImage() {
+        const product = products.find(item => item.id === match.params.id).imgsrc;
+        console.log(product);
+        return product;
     }
 }
 
