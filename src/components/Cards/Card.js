@@ -3,7 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core';
 import Image from 'material-ui-image';
-import testImage from '../../resources/Tshirts/whiteTshirt.png'
+import imageOne from '../../resources/mainpage/first.png';
+import imageTwo from '../../resources/mainpage/second.png';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -35,7 +36,7 @@ function Card(props) {
 
                 <Grid item xs={6}>
                     <Image
-                        src={testImage}
+                        src={imageOne}
                         aspectRatio={(4/3)}
                         />
                 </Grid>
@@ -46,7 +47,7 @@ function Card(props) {
         <>
             <Grid item xs={6}>
                 <Image
-                    src={testImage}
+                    src={imageTwo}
                     aspectRatio={(4/3)}
                     />
             </Grid>

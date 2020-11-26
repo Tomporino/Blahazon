@@ -6,6 +6,7 @@ import {ProductList} from './components/ProductList';
 //import ProductGrid from './components/Grids/ProductGrid';
 //import testImage from './resources/Tshirts/blahamodel.png'
 import './App.css'
+import Customize from './components/Customization/Customize';
 
 // const products = [
 //   {id:"1", imgsrc:`${testImage}`, name:"testkep", description:"leiras"},
@@ -30,6 +31,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={ProductList} />
           <Route path="/product/:id" component={Product} />
+          <Route path="/customize" exact component={Customize} />
         </Switch>
       </div>
     </Router>
