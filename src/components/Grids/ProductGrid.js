@@ -1,23 +1,36 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import Card from './components/Cards/Cards.js';
+import ProductCard from '../Cards/ProductCard';
 
-function ProductGrid() {
+
+function ProductGrid(props) {
+    console.log(props);
     return (
-        <Grid container >
-            <Grid item xs={12} sm={6}>
-                <Card/>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-                <Card/>
-            </Grid>
-            <Grid xs={12} sm={6}>
-                <Card/>
-            </Grid>
-        </Grid>
+        <div className="grid-container" style={gridContainerStyle}>
+            <Grid 
+            container 
+            spacing={5}
+            direction="row"
+            justify="space-around"
+            alignItems="center"> 
+            {
+                props.products.map(
+                    (product)=> 
+                    <Grid xs={4} item>
+                            <ProductCard imageSource={product.imgsrc} name={product.name} description={product.description} id={product.id}/>
+                    </Grid>
+                )
+            }
             
-        
+            </Grid>
+        </div>
     )
+}       
+
+const gridContainerStyle = {
+    paddingTop: '10%',
+    paddingLeft: '5%'
+    
 }
 
 export default ProductGrid
